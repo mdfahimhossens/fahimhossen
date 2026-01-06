@@ -1,18 +1,23 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import emailjs from 'emailjs-com';
+import emailjs from '@emailjs/browser';
 
 @Component({
   selector: 'app-stay-in-touch',
   templateUrl: './stay-in-touch.component.html',
-  styleUrl: './stay-in-touch.component.scss'
+  styleUrls: ['./stay-in-touch.component.scss']
 })
 export class StayInTouchComponent implements OnInit {
   contactForm!: FormGroup;
 
+  message: string = '';
+  messageType: 'success' | 'error' | '' = '';
+
   constructor(private fb: FormBuilder) {}
 
   ngOnInit(): void {
+    emailjs.init('HopAu3ctR1DKDrAVf');
+
     this.contactForm = this.fb.group({
       fullName: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
@@ -21,16 +26,10 @@ export class StayInTouchComponent implements OnInit {
     });
   }
 
-  message: string = '';
-messageType: 'success' | 'error' | '' = '';
+  onSubmit(): void {
+    if (this.contactForm.invalid) return;
 
-onSubmit(): void {
-  if (this.contactForm.valid) {
-    const serviceID = 'service_fux8f6t';
-    const templateID = 'template_vs87kqr';
-    const userID = 'HopAu3ctR1DKDrAVf';
-
-    emailjs.send(serviceID, templateID, this.contactForm.value, userID)
+    emailjs.send('service_fux8f6t', 'template_vs87kqr', this.contactForm.value)
       .then(() => {
         this.message = 'Message sent successfully!';
         this.messageType = 'success';
@@ -40,12 +39,11 @@ onSubmit(): void {
           this.message = '';
           this.messageType = '';
         }, 4000);
-      }, (err) => {
+      })
+      .catch(err => {
         this.message = 'Failed to send message. Please try again.';
         this.messageType = 'error';
         console.error(err);
       });
   }
-}
-
 }
