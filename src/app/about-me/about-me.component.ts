@@ -48,8 +48,8 @@ export class AboutMeComponent implements AfterViewInit {
   startAnimation() {
     this.skillsAnimated = true;
     this.ngZone.runOutsideAngular(() => {
-      this.animateCount('htmlValue', 89, 'htmlValue-fill');
-      this.animateCount('cssValue', 87, 'cssValue-fill');
+      this.animateCount('htmlValue', 90, 'htmlValue-fill');
+      this.animateCount('cssValue', 85, 'cssValue-fill');
       this.animateCount('jsValue', 75, 'jsValue-fill');
       this.animateCount('phpValue', 80, 'phpValue-fill');
     });

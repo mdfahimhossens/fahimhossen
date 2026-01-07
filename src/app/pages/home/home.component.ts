@@ -10,30 +10,49 @@ import { Portfolio } from '../../interfaces/portfolio';
 })
 export class HomeComponent {
   service: Services = {
-    img: '../../assets/img/icon/designer.png',
-    title: 'Design Skills',
-    description: 'Customize your WordPress theme with tailored designs, intuitive layouts.',
+    img: '../../assets/img/icon/coding.png',
+    title: 'Front-End Developer',
+      description: ` 
+      <span><b>✔</b> Responsive Design </span> <br/>
+      <span><b>✔</b> Creative Web Solution </span> <br/>
+      <span><b>✔</b> Pixel-perfect UI </span> <br/>
+      <span><b>✔</b> Fast loading websites </span>
+      `,
   }
 
 
   services: Services[] = [
-    {
-      img: '../../assets/img/icon/designer.png',
-      title: 'Design Skills',
-      description: 'Proficient in Figma design, creating sleek user interfaces and intuitive user experiences with a strong eye for aesthetics and usability.',
-    },
-    {
-      img: '../../assets/img/icon/coding.png',
-      title: 'Front-end developer',
-      description: 'I’m a Front-End Web Developer who is passionate about crafting error-free, responsive, and visually appealing websites with a strong focus on user experience and 100% client satisfaction.',
-
-    },
-    {
-      img: '../../assets/img/icon/web_devepolment.png',
-      title: 'Back-end developer',
-      description: 'Back-End Developer with expertise in PHP, Laravel framework, and MySQL database. Passionate about creating robust server-side logic and seamless database integration.',
-    }
-  ]
+  {
+    img: '../../assets/img/icon/coding.png',
+    title: 'Front-End Developer',
+    description: `
+        <span><b>✔</b> Responsive Design</span><br/>
+        <span><b>✔</b> Creative Web Solution </span> <br/>
+        <span><b>✔</b> Pixel-perfect UI</span><br/>
+        <span><b>✔</b> Fast loading websites</span>
+    `,
+  },
+  {
+    img: '../../assets/img/icon/web_devepolment.png',
+    title: 'Back-End Developer',
+    description: `
+        <span><b>✔</b> Secure PHP & Laravel </span><br/>
+        <span><b>✔</b> Database Management</span><br/>
+        <span><b>✔</b> Admin panel development</span> <br/>
+        <span><b>✔</b> REST API + Auth Systems</span>
+    `,
+  },
+  {
+    img: '../../assets/img/icon/wordpress.png',
+    title: 'Wordpress Developer',
+    description: `
+        <span><b>✔</b> Custom Theme Development</span><br/>
+        <span><b>✔</b> WooCommerce Store Setup</span><br/>
+        <span><b>✔</b> Speed Optimization</span><br/>
+        <span><b>✔</b> Bug Fix & Maintenance</span>
+    `,
+  }
+];
 
   work: Work = {
     img: '../../assets/img/work_icon/idea1.png',
@@ -66,28 +85,48 @@ export class HomeComponent {
 
   portfolio: Portfolio = {
     img: '../../assets/img/testimonial/educavo.png',
-    title: 'Website Design',
-    descrip: 'Built using HTML5, CSS3, and Bootstrap 5',
+    title: 'Business Website for Corporate',
+    descrip: `
+    <span>✔ Responsive Business Website</span><br/>
+      <span>✔ Modern & Clean UI/UX Design</span><br>
+      <span>✔ Cross-browser Compatibility</span><br>
+      <span>✔ SEO Optimized & Fast Loading</span>
+    `,
     link: 'https://educavo20.netlify.app/'
   }
 
   portfolioItem: Portfolio[] = [
     {
       img: '../../assets/img/testimonial/educavo.png',
-      title: 'Website Design',
-      descrip: 'Built using Bootstrap 5, JS and jQuery',
+      title: 'Business Website for Corporate',
+      descrip: `
+        <span>✔ Responsive Business Website</span> <br/>
+       <span>✔ Modern & Clean UI/UX Design</span><br>
+      <span>✔ Cross-browser Compatibility</span><br>
+      <span>✔ SEO Optimized & Fast Loading</span>
+      `,
       link: 'https://educavo20.netlify.app/'
     },
     {
       img: '../../assets/img/testimonial/construct.png',
-      title: 'Website Design',
-      descrip: 'Built using Bootstrap 5, JS and jQuery',
+      title: 'Real Estate Website',
+      descrip: `
+      <span>✔ Built with Bootstrap 5</span><br>
+      <span>✔ Interactive UI using JavaScript & jQuery</span><br>
+      <span>✔ Property Listing & Gallery Features</span><br>
+      <span>✔ Mobile Friendly & SEO Ready</span>
+      `,
       link: 'https://contractor20.netlify.app'
     },
     {
       img: '../../assets/img/testimonial/medicate.png',
-      title: 'Website Design',
-      descrip: 'Built using Bootstrap 5, JS and jQuery',
+      title: 'Health Care Landing Page',
+      descrip: `
+      <span>✔ Built with Bootstrap 5</span><br>
+      <span>✔ Smooth Animations & Interactive Layout</span><br>
+      <span>✔ Mobile-first Responsive Design</span><br>
+      <span>✔ Clean & Professional Look</span>
+      `,
       link: 'https://pregnancy20.netlify.app'
     }
   ]
