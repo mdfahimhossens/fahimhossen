@@ -6,69 +6,105 @@
             color: var(--white);
         }
     }
-    .contact_inner {
-        width: 760px;
-        margin: auto;
-        background: repeating-radial-gradient(#0000002e, transparent 100px);
-        padding: 20px 45px;
-        border-radius: 20px;
-        margin-top: 90px;
-    }
-    
-    .form_fleid label {
-        color: #fff;
-    }
-    
-    .form_fleid textarea {
-        display: block;
-        width: 100%;
-        border-radius: 5px;
-        padding: 5px 10px;
-    }
-    
-    .contact_inner form button {
-        width: 100%;
-        margin-top: 15px;
-        background: linear-gradient(45deg, #6E6FFF, transparent);
-        border: none;
-        padding: 8px;
-    }
-    .message {
-        text-align: center;
-        margin-bottom: 15px;
-        /* font-size: ; */
-        display: none;
-        h3 {
-            font-size: 22px;
-            color: #454491 !important;
-        }
-    }
-    .form-message {
-        padding: 10px 16px;
-        border-radius: 6px;
-        margin-bottom: 15px;
-        font-weight: 600;
-        font-size: 15px;
-        text-align: center;
-        transition: all 0.3s ease-in-out;
-        text-transform: capitalize;
-      }
-      
-      .msg-success {
-        background-color: #e0f8f2;
-        color: #1b9c85;
-        border: 1px solid #1b9c85;
-      }
-      
-      .msg-error {
-        background-color: #ffe2e2;
-        color: #d32f2f;
-        border: 1px solid #d32f2f;
-      }
-      
 
+    .why_choose_me{
+    margin-top: 110px;
+
+.why_choose_item {
+  background: #2023371f;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  box-shadow:
+    0 15px 35px rgba(0, 0, 0, 0.35),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+
+  border-radius: 14px;
+  padding: 35px;
+  position: relative;
+  height: 260px;
+
+  display: grid;
+  justify-items: center;
+  align-content: center;
+
+  overflow: hidden;
+  transition: all 0.45s ease;
+  z-index: 1;
+
+  /* ✨ Premium Hover */
+  &:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow:
+      0 25px 60px rgba(95, 46, 234, 0.35),
+      inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+  }
+
+  /* 🔮 Icon */
+img {
+    width: 75px;
 }
 
+  /* 🧠 Title */
+  h2 {
+    color: #fff !important;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    margin-bottom: 10px;
+    font-size: 26px;
+  }
+
+  /* 📝 Text */
+  p {
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 15px;
+    line-height: 1.6;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+  }
+
+  /* 🌙 Decorative Shape */
+  &::before {
+    content: "";
+    width: 28px;
+    height: 50px;
+    position: absolute;
+    left: 12%;
+    bottom: 6%;
+    transform: rotate(248deg);
+    background: url(../../assets/img/shape.png) no-repeat center / contain;
+    opacity: 0.15;
+    z-index: -1;
+    filter: blur(0.5px);
+  }
+
+  &::after {
+    content: "";
+    width: 45px;
+    height: 45px;
+    position: absolute;
+    right: 3%;
+    top: 6%;
+    transform: rotate(248deg);
+    background: url(../../assets/img/tringle.png) no-repeat center / contain;
+    opacity: 0.15;
+    z-index: -1;
+    filter: blur(0.5px);
+  }
+
+  /* ✨ Glow Border Effect */
+  &::selection {
+    background: transparent;
+  }
+}
+
+     
+    }
+}
+.stay_touch_inner {
+    padding-top: 60px;
+}
 .stay_item {
     background: #202337;
     padding: 30px 0px 20px;
@@ -125,6 +161,13 @@
     .stay_item p {
         font-size: 14px;
     }
+
+    .why_choose_item{
+      h2{
+        font-size: 24px !important;
+        text-align: center;
+      }
+    }
   
   }
 
@@ -137,6 +180,15 @@
     .stay_item {
         margin-bottom: 40px !important;
     }
+    .why_choose_item{
+      img{
+        width: 60px !important;
+      }
+      h2{
+        font-size: 20px !important;
+        text-align: center;
+      }
+    }
 }
   // `sm` applies to x-small devices (portrait phones, less than 576px)
 @media (max-width: 575.98px) { 
@@ -147,4 +199,25 @@ section#contact {
     padding-left: 11px;
     padding-right: 11px;
 }
+}
+
+@media (max-width: 460px){
+    .stay_in_touch{
+      padding: 0px !important;
+      .why_choose_item{
+        height: 245px !important;
+        
+      img{
+        width: 40px !important;
+      }
+      h2{
+        font-size: 17px !important;
+        text-align: center;
+      }
+      p{
+        font-size: 13px !important;
+      }
+    }
+    }
+      
 }

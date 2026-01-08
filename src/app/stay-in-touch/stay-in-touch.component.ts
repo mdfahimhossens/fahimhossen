@@ -7,43 +7,43 @@ import emailjs from '@emailjs/browser';
   templateUrl: './stay-in-touch.component.html',
   styleUrls: ['./stay-in-touch.component.scss']
 })
-export class StayInTouchComponent implements OnInit {
-  contactForm!: FormGroup;
+export class StayInTouchComponent {
+  // contactForm!: FormGroup;
 
-  message: string = '';
-  messageType: 'success' | 'error' | '' = '';
+  // message: string = '';
+  // messageType: 'success' | 'error' | '' = '';
 
-  constructor(private fb: FormBuilder) {}
+  // constructor(private fb: FormBuilder) {}
 
-  ngOnInit(): void {
-    emailjs.init('HopAu3ctR1DKDrAVf');
+  // ngOnInit(): void {
+  //   emailjs.init('HopAu3ctR1DKDrAVf');
 
-    this.contactForm = this.fb.group({
-      fullName: ['', Validators.required],
-      email: ['', [Validators.required, Validators.email]],
-      phone: [''],
-      message: ['', Validators.required]
-    });
-  }
+  //   this.contactForm = this.fb.group({
+  //     fullName: ['', Validators.required],
+  //     email: ['', [Validators.required, Validators.email]],
+  //     phone: [''],
+  //     message: ['', Validators.required]
+  //   });
+  // }
 
-  onSubmit(): void {
-    if (this.contactForm.invalid) return;
+  // onSubmit(): void {
+  //   if (this.contactForm.invalid) return;
 
-    emailjs.send('service_fux8f6t', 'template_vs87kqr', this.contactForm.value)
-      .then(() => {
-        this.message = 'Message sent successfully!';
-        this.messageType = 'success';
-        this.contactForm.reset();
+  //   emailjs.send('service_fux8f6t', 'template_vs87kqr', this.contactForm.value)
+  //     .then(() => {
+  //       this.message = 'Message sent successfully!';
+  //       this.messageType = 'success';
+  //       this.contactForm.reset();
 
-        setTimeout(() => {
-          this.message = '';
-          this.messageType = '';
-        }, 4000);
-      })
-      .catch(err => {
-        this.message = 'Failed to send message. Please try again.';
-        this.messageType = 'error';
-        console.error(err);
-      });
-  }
+  //       setTimeout(() => {
+  //         this.message = '';
+  //         this.messageType = '';
+  //       }, 4000);
+  //     })
+  //     .catch(err => {
+  //       this.message = 'Failed to send message. Please try again.';
+  //       this.messageType = 'error';
+  //       console.error(err);
+  //     });
+  // }
 }
